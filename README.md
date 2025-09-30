@@ -59,10 +59,30 @@ The `tools/` directory contains production-ready Claude Code extensions:
 - `web-search-researcher.md` - Conducts focused web research
 
 **Commands** (`tools/commands/`):
+
+*Core Three-Phase Workflow:*
 - `/research_codebase` - Phase 1: Spawns parallel sub-agents for comprehensive research
+- `/research_codebase_generic` - Generic version without HumanLayer-specific patterns
 - `/create_plan` - Phase 2: Creates detailed, phased implementation plans
+- `/create_plan_generic` - Generic version without HumanLayer-specific patterns
 - `/implement_plan` - Phase 3: Executes plans with progress tracking
-- `/ralph_research`, `/ralph_plan`, `/ralph_impl` - Automated workflow integration
+- `/validate_plan` - Reviews implementation plans for completeness
+
+*Automated Workflow (Ralph):*
+- `/ralph_research` - Fetches "research needed" tickets and spawns research
+- `/ralph_plan` - Fetches "ready for spec" tickets and creates plans
+- `/ralph_impl` - Fetches "ready for dev" tickets and implements
+
+*Git & PR Management:*
+- `/commit` - Creates well-formatted git commits with proper messages
+- `/describe_pr` - Generates comprehensive PR descriptions from diffs
+- `/create_worktree` - Manages git worktrees for parallel work
+
+*Integration & Utilities:*
+- `/linear` - Linear ticket management and workflow automation
+- `/local_review` - Reviews code changes before committing
+- `/debug` - Debugging assistance and troubleshooting
+- `/founder_mode` - High-level strategic decision making
 
 **Note**: Claude Code automatically discovers these tools when working in this directory.
 
