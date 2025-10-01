@@ -8,6 +8,7 @@ Research is organized by **content type and purpose** with supporting production
 
 ```
 ai-dev/
+├── PHILOSOPHY.md        # 🎯 Why spec-driven development matters
 ├── tools/               # 🔧 Production implementation tools
 │   ├── agents/          # Custom Claude Code agents
 │   └── commands/        # Custom Claude Code commands
@@ -17,8 +18,7 @@ ai-dev/
 │   └── repos/           # Code examples and implementations
 ├── 01-methodologies/    # 📘 Processed, actionable frameworks
 ├── 02-examples/         # 💡 Practical applications and workflows
-├── 03-experiments/      # 🧪 Work-in-progress, testing ideas
-└── templates/           # 📋 Reusable document templates
+└── 03-experiments/      # 🧪 Work-in-progress, testing ideas
 ```
 
 ### About This Structure
@@ -34,9 +34,9 @@ ai-dev/
 
 ### Key Documents
 
+- 🎯 **[PHILOSOPHY.md](PHILOSOPHY.md)** - Why this matters: the case for spec-driven development (start here)
 - 📘 **[spec-driven-ai-guide](01-methodologies/spec-driven-ai-guide.md)** - Complete implementation guide with production examples
-- 📹 **[context-engineering-boundary](00-sources/videos/context-engineering-boundary.md)** - Source video analysis (Boundary)
-- 📹 **[context-engineering-core](00-sources/videos/context-engineering-core.md)** - Core principles (YC Root Access)
+- 💡 **[example-workflow](02-examples/example-workflow.md)** - Practical walkthrough of the methodology in action
 
 ### Key Concepts
 
