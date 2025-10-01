@@ -4,7 +4,7 @@ A curated collection of AI development methodologies, production implementations
 
 ## Repository Structure
 
-Research is organized by **maturity level** with supporting production tooling:
+Research is organized by **content type and purpose** with supporting production tooling:
 
 ```
 ai-dev/
@@ -21,10 +21,10 @@ ai-dev/
 └── templates/           # 📋 Reusable document templates
 ```
 
-### Benefits of This Structure
+### About This Structure
 
-- Files sort naturally by maturity stage
-- Clear progression: source → methodology → example → experiment
+- Files organize by content type and purpose
+- Sources provide input, methodologies are the core frameworks, examples demonstrate application
 - Easy to identify what's "ready to use" vs "still processing"
 - Production tools separate from research materials
 
@@ -129,19 +129,18 @@ applicable_to:
 ### Processing New Research
 
 1. **Identify source type** (video, article, repo)
-2. **Use appropriate template** from `templates/`
-3. **Save to correct folder** based on maturity
+3. **Save to correct folder** based on content type
 4. **Link relationships** in YAML frontmatter
 
 ### Finding Content
 
-- **By maturity**: Browse folder structure (`00-sources/` → `01-methodologies/` → `02-examples/`)
+- **By content type**: Browse folder structure (`00-sources/` → `01-methodologies/` → `02-examples/`)
 - **By topic**: Use Obsidian search with metadata tags
 - **By relationship**: Follow wiki-links in document frontmatter
 
 ## Implementation Status
 
-### Production Ready ✅
+### Ready to Use ✅
 - **Spec-Driven AI Development** - Complete methodology Claude subagents and Claude commands
 - **Custom Claude Code Tools** - 6 agents + 17 commands ready to use
 
@@ -166,4 +165,4 @@ Primary sources are credited in each document's YAML frontmatter. Key contributo
 *Last Updated: 2025-09-30*
 *Core Methodologies: 1*
 *Production Tools: 6 agents, 17 commands*
-*Documents: 6+ organized by maturity*
+*Documents: 6+ organized by content type*
