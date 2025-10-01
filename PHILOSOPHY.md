@@ -76,7 +76,7 @@ Understanding this hierarchy fundamentally changes how you should work with AI:
 1 bad line of research     = 1,000s of incorrect lines
 ```
 
-**This is not a metaphor. This is math.**
+**This isn't just theory, it's measurable impact.**
 
 If an AI misunderstands how your authentication system works (bad research), every line of code it writes based on that misunderstanding will be wrong. It might generate hundreds or thousands of incorrect lines before you catch it.
 
@@ -94,9 +94,9 @@ A 10-page research document reviewed in 30 minutes can prevent 10 hours of debug
 
 A 5-page implementation plan reviewed in 20 minutes can prevent hundreds of lines of incorrect code from being written.
 
-**This is MORE rigorous engineering, not less.**
+**This is more rigorous engineering, not less.**
 
-## What Actually Changes For You
+## What Actually Changes
 
 | Traditional AI Coding | Spec-Driven AI Development |
 |----------------------|----------------------------|
@@ -122,7 +122,7 @@ Your skills become MORE valuable, not less:
 - **Performance requirements:** You set benchmarks and constraints
 - **Code patterns:** You establish conventions the AI follows
 
-The AI handles the tedious part: translating your architectural decisions into thousands of lines of implementation code.
+The AI handles translating your architectural decisions into thousands of lines of implementation code.
 
 ### Understanding Without Line-by-Line Review
 
@@ -136,7 +136,7 @@ When code matches a well-designed spec with comprehensive tests, line-by-line re
 
 You review the architecture, the approach, the testing strategy. The implementation details become a compilation step.
 
-## The Proof: Real Numbers from Real Projects
+## Real Numbers from Real Projects
 
 These aren't greenfield demos. These are documented results from engineering teams at **Boundary** (AI infrastructure company) and **HumanLayer** (human-in-the-loop AI workflows) who developed and validated this methodology in production:
 
