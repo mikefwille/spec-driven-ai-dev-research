@@ -34,9 +34,9 @@ ai-dev/
 
 ### Key Documents
 
-- 📘 **[[spec-driven-ai-guide]]** - Complete implementation guide with production examples
-- 📹 **[[context-engineering-boundary]]** - Source video analysis (Boundary)
-- 📹 **[[context-engineering-core]]** - Core principles (YC Root Access)
+- 📘 **[spec-driven-ai-guide](01-methodologies/spec-driven-ai-guide.md)** - Complete implementation guide with production examples
+- 📹 **[context-engineering-boundary](00-sources/videos/context-engineering-boundary.md)** - Source video analysis (Boundary)
+- 📹 **[context-engineering-core](00-sources/videos/context-engineering-core.md)** - Core principles (YC Root Access)
 
 ### Key Concepts
 
