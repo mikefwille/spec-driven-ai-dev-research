@@ -34,7 +34,7 @@ related_concepts:
   - brownfield-development
 
 # Discoverability
-primary_topic: "spec-driven AI development methodology"
+primary_topic: "advanced context engineering for development methodology"
 secondary_topics:
   - "three-phase workflow (research/plan/implement)"
   - "context window management at scale"
@@ -58,10 +58,10 @@ prerequisites:
 estimated_effort: "1-2 weeks for team implementation"
 
 summary_long: >-
-  Comprehensive implementation guide for spec-driven AI development methodology, synthesizing the three-phase workflow (research, planning, implementation) from Boundary's methodology with production examples from HumanLayer's .claude repository. Includes detailed sub-agent patterns, context management strategies, human review checkpoints, and real-world validation cases. Demonstrates how to transform from naive "vibe coding" to engineered, verifiable development using structured workflows and intentional context control.
+  Comprehensive implementation guide for advanced context engineering and spec-driven AI development methodology, synthesizing the three-phase workflow (research, planning, implementation) from Boundary's methodology with production examples from HumanLayer's .claude repository. Includes detailed sub-agent patterns, context management strategies, human review checkpoints, and real-world validation cases. Demonstrates how to transform from naive "vibe coding" to engineered, verifiable development using structured workflows and intentional context control.
 
 summary_short: >-
-  Production-ready guide for implementing spec-driven AI development: research-plan-implement workflow with sub-agent orchestration, context management, and human checkpoints. Based on Boundary methodology with HumanLayer production examples.
+  Production-ready guide for implementing advanced context engineering and spec-driven AI development: research-plan-implement workflow with sub-agent orchestration, context management, and human checkpoints. Based on Boundary methodology with HumanLayer production examples.
 
 ai_tags:
   - spec-first-development
@@ -73,7 +73,7 @@ ai_tags:
   - brownfield-development
 ---
 
-# Spec-Driven AI Development Guide
+# Advanced Context Engineering and Spec-Driven Development Guide
 
 ## Overview
 
@@ -966,7 +966,7 @@ This methodology transforms:
 ## Implementation Notes
 
 - **Methodology Origin:** Developed by Dexter Horthy (Human Layer founder) out of necessity when dealing with massive AI-generated pull requests (20,000+ lines)
-- **Production Implementation:** HumanLayer's .claude configuration demonstrates full methodology implementation
+- **Production Implementation:** HumanLayer's custom Claude Code commands and agents demonstrate these patterns in practice
 - **Validation:** Tested on 300,000-line Rust codebases, complex WASM implementations, enterprise customer service systems
 - **Core Philosophy:** Treat AI agents as engineered systems requiring explicit control, not magic black boxes
 - **Team Impact:** Coding agents will become commoditized; differentiation comes from workflow transformation capabilities

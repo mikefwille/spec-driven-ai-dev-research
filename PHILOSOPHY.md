@@ -1,4 +1,4 @@
-# The Philosophy of Spec-Driven AI Development
+# The Philosophy of Advanced Context Engineering and Spec-Driven AI Development
 
 ## The Current State of AI-Assisted Development
 
@@ -52,7 +52,7 @@ This works when reviewing a 50-line change. But when AI generates a 2,000-line P
 
 The principle is sound. You *should* understand what you're shipping. But the execution breaks down at scale.
 
-## The Solution: Spec-Driven Development
+## The Solution: Advanced Context Engineering and Spec-Driven Development
 
 The problems above share a common root cause: **treating AI coding as an interactive conversation rather than an engineered process.**
 
@@ -64,7 +64,7 @@ The solution isn't better models, it's better methodology. Specifically, a struc
 4. **Reviews at high-leverage points** (research/planning, not just code)
 5. **Treats specifications as primary assets** that generate code
 
-This is called **spec-driven development**, and it's built around a simple insight: LLMs are pure functions. Output quality equals input quality. If you control what goes into the context window (and when) you control the quality of what comes out.
+This combines **advanced context engineering** (intentional management of what information enters the AI's context window and when) with **spec-driven development** (a three-phase workflow where specifications are the primary asset). It's built around a simple insight: LLMs are pure functions. Output quality equals input quality. If you control what goes into the context window (and when) you control the quality of what comes out.
 
 ### The Math That Changes Everything: Hierarchy of Leverage
 
@@ -98,8 +98,8 @@ A 5-page implementation plan reviewed in 20 minutes can prevent hundreds of line
 
 ## What Actually Changes
 
-| Traditional AI Coding | Spec-Driven AI Development |
-|----------------------|----------------------------|
+| Traditional AI Coding | Advanced Context Engineering & Spec-Driven Development |
+|----------------------|-------------------------------------------------------|
 | **What you review:** 2,000-line PR with scattered changes | **What you review:** 10-page research doc + 5-page implementation plan |
 | **When errors get caught:** After implementation, during code review or QA | **When errors get caught:** During research and planning phases |
 | **Where you spend time:** Debugging incorrect implementations, rewriting code | **Where you spend time:** System design, architecture decisions, test strategy |
@@ -180,7 +180,7 @@ The specification-first approach isn't just faster, it's more rigorous engineeri
 
 **Ready to dive deeper?**
 
-→ **[spec-driven-ai-guide.md](01-methodologies/spec-driven-ai-guide.md)** - Complete methodology with production examples
+→ **[advanced-context-engineering-guide.md](01-methodologies/advanced-context-engineering-guide.md)** - Complete methodology with production examples
 
 → **[example-workflow.md](02-examples/example-workflow.md)** - Practical walkthrough of the methodology in action
 

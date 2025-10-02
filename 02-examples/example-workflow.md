@@ -1,7 +1,7 @@
 ---
 # Provenance
 source_type: example
-parent_methodology: "[[spec-driven-ai-guide]]"
+parent_methodology: "[[advanced-context-engineering-guide]]"
 date_created: 2025-09-13
 
 # Document Status
@@ -10,9 +10,9 @@ maturity: production_validated
 implementation_status: realistic_scenario
 
 # Relationships
-parent_doc: "[[spec-driven-ai-guide]]"
+parent_doc: "[[advanced-context-engineering-guide]]"
 implements_methodology:
-  - "[[spec-driven-ai-guide]]"
+  - "[[advanced-context-engineering-guide]]"
   - "[[context-engineering-boundary]]"
   - "[[context-engineering-core]]"
 related_concepts:
@@ -48,7 +48,7 @@ summary_short: >-
   Complete 8-week workflow example demonstrating spec-driven AI development methodology for building an AI customer support system with CRM integration, multi-channel support, and human escalation workflows.
 ---
 
-# Spec-Driven AI Development: Complete Workflow Example
+# Advanced Context Engineering and Spec-Driven AI Development: Complete Workflow Example
 
 ## Scenario: Building a New AI-Powered Customer Support System
 
@@ -58,7 +58,7 @@ This document shows the complete workflow for implementing advanced context engi
 
 ---
 
-## Phase 1: Project Initiation & Research (Day 1-2)
+## Phase 1: Project Initiation & Research
 
 ### Input: Initial Requirements
 ```
@@ -167,7 +167,7 @@ for customer context, (3) LLM-powered response generation, (4) Human escalation 
 
 ---
 
-## Phase 2: Implementation Planning (Day 3-4)
+## Phase 2: Implementation Planning
 
 ### Step 2.1: Create Implementation Plan
 **Command Used**: `/create_plan`
@@ -544,13 +544,16 @@ async def log_ai_response(response, confidence_score):
 
 ### Workflow Artifacts Created
 
-**Research Phase** (2 days):
+**Research Phase**:
+
 - `thoughts/shared/research/2025-09-18-ENG-2401-ai-customer-support-research.md`
 
-**Planning Phase** (2 days):
+**Planning Phase:
+
 - `thoughts/shared/plans/2025-09-18-ENG-2401-ai-customer-support-implementation.md`
 
-**Implementation Phase** (8 weeks):
+**Implementation Phase:
+
 - `thoughts/shared/progress/2025-09-18-ENG-2401-ai-customer-support-progress.md` (updated continuously)
 - Complete codebase with 47 files, 12,000 lines of production code
 - Comprehensive test suite with 95% coverage

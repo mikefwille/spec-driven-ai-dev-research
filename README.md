@@ -1,6 +1,6 @@
-# AI Development Research
+# Advanced Context Engineering for AI Development
 
-A curated collection of AI development methodologies, production implementations, and research materials focused on effective AI-assisted software development.
+Advanced context engineering methodology: research, production tools, and implementation guide for AI-assisted development.
 
 ## Repository Structure
 
@@ -28,14 +28,14 @@ ai-dev/
 - Easy to identify what's "ready to use" vs "still processing"
 - Production tools separate from research materials
 
-## Core Methodology: Spec-Driven AI Development
+## Core Methodology: Advanced Context Engineering and Spec-Driven Development
 
 **The primary methodology documented in this repository**: A three-phase workflow (Research → Plan → Implement) for production-ready AI-assisted development in large codebases.
 
 ### Key Documents
 
 - 🎯 **[PHILOSOPHY.md](PHILOSOPHY.md)** - Why this matters: the case for spec-driven development (start here)
-- 📘 **[spec-driven-ai-guide](01-methodologies/spec-driven-ai-guide.md)** - Complete implementation guide with production examples
+- 📘 **[advanced-context-engineering-guide](01-methodologies/advanced-context-engineering-guide.md)** - Complete implementation guide with production examples
 - 💡 **[example-workflow](02-examples/example-workflow.md)** - Practical walkthrough of the methodology in action
 
 ### Key Concepts
@@ -122,7 +122,7 @@ applicable_to:
 
 ### Using the Methodology
 
-1. **Start with the guide**: Read `01-methodologies/spec-driven-ai-guide.md`
+1. **Start with the guide**: Read `01-methodologies/advanced-context-engineering-guide.md`
 2. **Explore the tools**: Check `tools/agents/` and `tools/commands/`
 3. **See examples**: Review documents in `02-examples/`
 
@@ -141,7 +141,7 @@ applicable_to:
 ## Implementation Status
 
 ### Ready to Use ✅
-- **Spec-Driven AI Development** - Complete methodology Claude subagents and Claude commands
+- **Advanced Context Engineering Methodology** - Working guide
 - **Custom Claude Code Tools** - 6 agents + 17 commands ready to use
 
 ### In Progress 🔄
