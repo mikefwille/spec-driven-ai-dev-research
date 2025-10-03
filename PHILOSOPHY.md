@@ -46,7 +46,7 @@ Naive interaction patterns fill the context with all three. When the AI makes a 
 
 ### The Impractical Review Problem
 
-Most engineering teams operate on a reasonable principle: understand what you're shipping before it goes to production.
+Most engineering teams operate on a reasonable principle: understand what each line of code does before it goes to production.
 
 This works when reviewing a 50-line change. But when AI generates a 2,000-line PR, thorough review becomes impractical. Even if the code is correct, reviewing it line-by-line becomes a multi-hour bottleneck. You can't hold the entire change in working memory. The cognitive load is overwhelming. You miss things. Or worse, you rubber-stamp it because thorough review isn't practical.
 
@@ -103,9 +103,9 @@ A 5-page implementation plan reviewed in 20 minutes can prevent hundreds of line
 | **What you review:** 2,000-line PR with scattered changes | **What you review:** 10-page research doc + 5-page implementation plan |
 | **When errors get caught:** After implementation, during code review or QA | **When errors get caught:** During research and planning phases |
 | **Where you spend time:** Debugging incorrect implementations, rewriting code | **Where you spend time:** System design, architecture decisions, test strategy |
-| **What you commit:** Code (specification discarded) | **What you commit:** Specification + generated code |
+| **What you commit:** Code (specification discarded) | **What you commit:** Research + plans + tests + generated code |
 | **Context management:** Reactive (restart when confused) | **Context management:** Proactive (planned refresh at 40% utilization) |
-| **Review focus:** "Does this code work?" | **Review focus:** "Is this the right approach?" |
+| **Review focus:** "Does this code work?" | **Review focus:** "Is the research correct? Is the plan sound? Are the tests well-designed?" |
 | **Team alignment:** Happens during PR review (too late) | **Team alignment:** Happens during planning (optimal timing) |
 | **Your role:** Code writer who occasionally uses AI | **Your role:** System architect who engineers specifications |
 
@@ -185,6 +185,8 @@ The specification-first approach isn't just faster, it's more rigorous engineeri
 → **[example-workflow.md](02-examples/example-workflow.md)** - Practical walkthrough of the methodology in action
 
 → **[tools/commands/](tools/commands/)** - Ready-to-use Claude Code commands implementing the workflow
+
+→ **[tools/agents/](tools/agents/)** - Ready-to-use Claude Code agents implementing the workflow
 
 ---
 

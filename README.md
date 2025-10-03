@@ -8,7 +8,7 @@ Research is organized by **content type and purpose** with supporting production
 
 ```
 ai-dev/
-├── PHILOSOPHY.md        # 🎯 Why spec-driven development matters
+├── PHILOSOPHY.md        # 🎯 Why advanced context engineering and spec-driven development matters
 ├── tools/               # 🔧 Production implementation tools
 │   ├── agents/          # Custom Claude Code agents
 │   └── commands/        # Custom Claude Code commands
