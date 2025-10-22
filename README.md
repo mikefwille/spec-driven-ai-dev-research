@@ -32,9 +32,13 @@ ai-dev/
 
 **The primary methodology documented in this repository**: A three-phase workflow (Research → Plan → Implement) for production-ready AI-assisted development in large codebases.
 
+### 🚀 New to This Methodology?
+
+**Start here:** [QUICKSTART.md](QUICKSTART.md) - One-page cheat sheet with visual flow diagram, commands, and checkpoints. Perfect for developers who want to get started immediately.
+
 ### Key Documents
 
-- 🎯 **[PHILOSOPHY.md](PHILOSOPHY.md)** - Why this matters: the case for spec-driven development (start here)
+- 🎯 **[PHILOSOPHY.md](PHILOSOPHY.md)** - Why this matters: the case for advanced context engineering and spec-driven development
 - 📘 **[advanced-context-engineering-guide](01-methodologies/advanced-context-engineering-guide.md)** - Complete implementation guide with production examples
 - 💡 **[example-workflow](02-examples/example-workflow.md)** - Practical walkthrough of the methodology in action
 
@@ -44,11 +48,11 @@ ai-dev/
 - **Three-phase workflow** - Research → Plan → Implement with human checkpoints
 - **Sub-agent patterns** - Delegate context-heavy tasks to specialized agents
 - **Specification-first** - The spec is the primary asset, not the code
-- **Hierarchy of leverage** - Review research/plans, not just code
+- **Hierarchy of leverage** - Review research/plans, test code
 
 ### Production Tools
 
-The `tools/` directory contains production-ready Claude Code extensions:
+The `tools/` directory contains production-oriented Claude Code extensions:
 
 **Agents** (`tools/agents/`):
 - `codebase-locator.md` - Finds WHERE code lives (no analysis, pure search)
@@ -84,11 +88,11 @@ The `tools/` directory contains production-ready Claude Code extensions:
 - `/debug` - Debugging assistance and troubleshooting
 - `/founder_mode` - High-level strategic decision making
 
-**Note**: Claude Code automatically discovers these tools when working in this directory.
+**Note**: Claude Code automatically discovers these tools when added to the .claude directory.
 
 ## Document Metadata Standards
 
-All research documents include structured YAML frontmatter:
+All research documents that contributed to writing this methodology in this repo include structured YAML frontmatter:
 
 ```yaml
 ---
@@ -122,8 +126,14 @@ applicable_to:
 
 ### Using the Methodology
 
-1. **Start with the guide**: Read `01-methodologies/advanced-context-engineering-guide.md`
-2. **Explore the tools**: Check `tools/agents/` and `tools/commands/`
+**For Developers (Quick Reference):**
+1. **Read [QUICKSTART.md](QUICKSTART.md)** - Get started in 5 minutes with the visual workflow guide
+2. **Copy tools to your project**: `tools/agents/` and `tools/commands/` → `.claude/` in your project
+3. **Run your first workflow**: `/research_codebase` → review → `/create_plan` → review → `/implement_plan`
+
+**For Deep Understanding:**
+1. **Start with the philosophy**: Read `PHILOSOPHY.md` to understand why this matters
+2. **Read the full guide**: `01-methodologies/advanced-context-engineering-guide.md`
 3. **See examples**: Review documents in `02-examples/`
 
 ### Processing New Research
@@ -162,7 +172,7 @@ Primary sources are credited in each document's YAML frontmatter. Key contributo
 
 ---
 
-*Last Updated: 2025-09-30*
+*Last Updated: 2025-10-04*
 *Core Methodologies: 1*
 *Production Tools: 6 agents, 17 commands*
 *Documents: 6+ organized by content type*
