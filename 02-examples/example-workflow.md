@@ -50,6 +50,55 @@ summary_short: >-
 
 # Advanced Context Engineering and Spec-Driven AI Development: Complete Workflow Example
 
+## Quick Reference: The Three-Phase Workflow
+
+This methodology follows a simple three-phase approach:
+
+1. **Research Phase** (`/research_codebase`)
+   - Understand what exists and how it works
+   - Spawn parallel sub-agents to explore different areas
+   - Document findings with file:line references
+   - **Output**: Research document in `thoughts/shared/research/`
+   - **Human Action**: Review and approve understanding
+
+2. **Planning Phase** (`/create_plan`)
+   - Design implementation with specific phases
+   - Define automated and manual success criteria
+   - Break work into incremental, testable changes
+   - **Output**: Implementation plan in `thoughts/shared/plans/`
+   - **Human Action**: Review and approve approach
+
+3. **Implementation Phase** (`/implement_plan [path-to-plan]`)
+   - Execute the approved plan phase by phase
+   - Check off items as they're completed
+   - Run success criteria after each phase
+   - **Output**: Working code + updated plan with checkmarks
+   - **Human Action**: Review at phase boundaries
+
+4. **Validation Phase** (`/validate_plan`) *(optional but recommended)*
+   - Verify implementation matches plan's success criteria
+   - Run all automated checks and document manual testing
+   - **Output**: Validation report confirming completion
+   - **Human Action**: Review validation results
+
+5. **Handoff Phase** (`/create_handoff` / `/resume_handoff`) *(when needed)*
+   - **Create**: Document current state when switching contexts
+   - **Resume**: Pick up work from a previous handoff
+   - **Output**: Handoff document for seamless context recovery
+   - **Human Action**: Use when pausing, transitioning, or resuming work
+
+6. **Commit & PR Phase** (`/commit` and `/describe_pr`)
+   - Create structured git commits with context
+   - Generate comprehensive PR descriptions
+   - **Output**: Clean git history + detailed PR documentation
+   - **Human Action**: Review commits and PR before pushing
+
+**Key Principle**: Research → Plan → Implement → Validate → Document → Ship. Each phase produces a document that becomes the input for the next phase.
+
+**Note**: After creating any document in `thoughts/`, run `humanlayer thoughts sync` to commit it to your thoughts repository.
+
+---
+
 ## Scenario: Building a New AI-Powered Customer Support System
 
 This document shows the complete workflow for implementing advanced context engineering on a brand new project from initial requirements through production deployment.

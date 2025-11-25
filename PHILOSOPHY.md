@@ -24,7 +24,7 @@ Six months later when you need to extend this feature, you start from scratch. T
 
 This is analogous to a developer writing source code, compiling it, and then checking in the compiled binary while deleting the source. **The specification (the description of what the software should do) is the most valuable asset.** Yet in typical AI workflows, it gets thrown away entirely.
 
-The code is the compilation artifact. The specification is the source.
+The code is the compilation artifact. The context and specification is the source.
 
 ### The Rework Tax
 
@@ -52,11 +52,11 @@ This works when reviewing a 50-line change. But when AI generates a 2,000-line P
 
 The principle is sound. You *should* understand what you're shipping. But the execution breaks down at scale.
 
-## The Solution: Advanced Context Engineering and Spec-Driven Development
+## The Solution: Combining Advanced Context Engineering and Spec-Driven Development
 
-The problems above share a common root cause: **treating AI coding as an interactive conversation rather than an engineered process.**
+The problems above share a common root cause: **treating AI coding as an interactive conversation rather than an engineered process.** The solution isn't better models, it's better methodology.
 
-The solution isn't better models, it's better methodology. Specifically, a structured workflow that:
+The methodology presented here is built from patterns repeatedly observed in production teams, research findings, and applied experimentation. It formalizes those patterns into a structured workflow that:
 
 1. **Preserves the specification** instead of discarding it
 2. **Manages context intentionally** to prevent pollution
@@ -64,11 +64,15 @@ The solution isn't better models, it's better methodology. Specifically, a struc
 4. **Reviews at high-leverage points** (research/planning, not just code)
 5. **Treats specifications as primary assets** that generate code
 
-This combines **advanced context engineering** (intentional management of what information enters the AI's context window and when) with **spec-driven development** (a three-phase workflow where specifications are the primary asset). It's built around a simple insight: LLMs are pure functions. Output quality equals input quality. If you control what goes into the context window (and when) you control the quality of what comes out.
+This combines **advanced context engineering** (intentional management of what information enters the AI's context window and when) with **spec-driven development** (a workflow where specifications are the primary asset). It's built around a simple insight: LLMs are pure functions. Output quality equals input quality. If you control what goes into the context window (and when) you control the quality of what comes out.
+
+This approach combines advanced context engineering (a set of practices distilled from real production usage) with spec-driven development (a structured workflow derived from observing what consistently worked in complex codebases).
+
+
 
 ### The Math That Changes Everything: Hierarchy of Leverage
 
-Understanding this hierarchy fundamentally changes how you should work with AI:
+A useful mental model emerges when you analyze how errors propagate through AI assisted workflows that fundamentally changes how you should work with AI:
 
 ```
 1 bad line of code         = 1 incorrect line
@@ -98,16 +102,16 @@ A 5-page implementation plan reviewed in 20 minutes can prevent hundreds of line
 
 ## What Actually Changes
 
-| Traditional AI Coding | Advanced Context Engineering & Spec-Driven Development |
-|----------------------|-------------------------------------------------------|
-| **What you review:** 2,000-line PR with scattered changes | **What you review:** 10-page research doc + 5-page implementation plan |
-| **When errors get caught:** After implementation, during code review or QA | **When errors get caught:** During research and planning phases |
-| **Where you spend time:** Debugging incorrect implementations, rewriting code | **Where you spend time:** System design, architecture decisions, test strategy |
-| **What you commit:** Code (specification discarded) | **What you commit:** Research + plans + tests + generated code |
-| **Context management:** Reactive (restart when confused) | **Context management:** Proactive (planned refresh at 40% utilization) |
-| **Review focus:** "Does this code work?" | **Review focus:** "Is the research correct? Is the plan sound? Are the tests well-designed?" |
-| **Team alignment:** Happens during PR review (too late) | **Team alignment:** Happens during planning (optimal timing) |
-| **Your role:** Code writer who occasionally uses AI | **Your role:** System architect who engineers specifications |
+| Traditional AI Coding                                                         | Advanced Context Engineering & Spec-Driven Development                                       |
+| ----------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| **What you review:** 2,000-line PR with scattered changes                     | **What you review:** 10-page research doc + 5-page implementation plan                       |
+| **When errors get caught:** After implementation, during code review or QA    | **When errors get caught:** During research and planning phases                              |
+| **Where you spend time:** Debugging incorrect implementations, rewriting code | **Where you spend time:** System design, architecture decisions, test strategy               |
+| **What you commit:** Code (specification discarded)                           | **What you commit:** Research + plans + tests + generated code                               |
+| **Context management:** Reactive (restart when confused)                      | **Context management:** Proactive (planned refresh at 40% utilization)                       |
+| **Review focus:** "Does this code work?"                                      | **Review focus:** "Is the research correct? Is the plan sound? Are the tests well-designed?" |
+| **Team alignment:** Happens during PR review (too late)                       | **Team alignment:** Happens during planning (optimal timing)                                 |
+| **Your role:** Code writer who is augments with AI                            | **Your role:** System architect who engineers specifications                                 |
 
 ### What You're Actually Doing
 
@@ -138,7 +142,7 @@ You review the architecture, the approach, the testing strategy. The implementat
 
 ## Real Numbers from Real Projects
 
-These aren't greenfield demos. These are documented results from engineering teams at **Boundary** (AI infrastructure company) and **HumanLayer** (human-in-the-loop AI workflows) who developed and validated this methodology in production:
+These are not greenfield demos. They are outcomes observed in production environments at Boundary (AI infrastructure) and HumanLayer (human-in-the-loop AI workflows). Their engineering teams publicly shared fragments of their processes, experiments, and results. The complete methodology you are reading is a structured framework built by synthesizing those observations, reconstructing missing steps, and systematizing patterns they used successfully in practice.
 
 ### Complex Bug Fix in 300,000-Line Rust Codebase
 - **Challenge:** Critical bug in Boundary's BAML codebase (300,000+ lines of production Rust)
@@ -174,7 +178,12 @@ AI coding agents are becoming commoditized. Every IDE has or will have deeply in
 
 Teams that wait for "better models" while continuing ineffective workflows will fall behind teams that transform their methodology today. The 50% rework tax isn't a model limitation, it's a methodology problem with a proven solution.
 
-The specification-first approach isn't just faster, it's more rigorous engineering. You're not reviewing less. You're reviewing at the points with maximum leverage.
+The specification-first approach works because it pairs two high-leverage ideas:
+
+1. Advanced context engineering: intentionally controlling what the AI sees and when, to eliminate noise, preserve signal, and avoid rework.
+2. Spec-driven development: writing structured plans and preserving them as source-of-truth assets that generate and verify code.
+
+You're not reviewing less. You're reviewing earlier and smarter, where small errors have massive downstream leverage. It's not just faster. It's more rigorous engineering.
 
 ---
 
@@ -190,4 +199,4 @@ The specification-first approach isn't just faster, it's more rigorous engineeri
 
 ---
 
-*This methodology originated from Boundary and HumanLayer, validated on 300K+ line codebases and production systems.
+This methodology draws on patterns observed in production work at Boundary and HumanLayer and has been validated against 300K plus line codebases and real production systems.
