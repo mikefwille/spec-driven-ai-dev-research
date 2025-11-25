@@ -64,15 +64,11 @@ The methodology presented here is built from patterns repeatedly observed in pro
 4. **Reviews at high-leverage points** (research/planning, not just code)
 5. **Treats specifications as primary assets** that generate code
 
-This combines **advanced context engineering** (intentional management of what information enters the AI's context window and when) with **spec-driven development** (a workflow where specifications are the primary asset). It's built around a simple insight: LLMs are pure functions. Output quality equals input quality. If you control what goes into the context window (and when) you control the quality of what comes out.
-
-This approach combines advanced context engineering (a set of practices distilled from real production usage) with spec-driven development (a structured workflow derived from observing what consistently worked in complex codebases).
-
-
+This combines **advanced context engineering** (intentional management of what information enters the AI's context window and when) with **spec-driven development** (a structured workflow derived from observing what consistently worked in complex codebases where specifications are the primary asset). It's built around a simple insight: LLMs are pure functions. Output quality equals input quality. If you control what goes into the context window (and when) you control the quality of what comes out.
 
 ### The Math That Changes Everything: Hierarchy of Leverage
 
-A useful mental model emerges when you analyze how errors propagate through AI assisted workflows that fundamentally changes how you should work with AI:
+A useful mental model emerges when you analyze how errors propagate through AI-assisted workflows, which fundamentally changes how you should work with AI:
 
 ```
 1 bad line of code         = 1 incorrect line
