@@ -56,7 +56,7 @@ The principle is sound. You *should* understand what you're shipping. But the ex
 
 The problems above share a common root cause: **treating AI coding as an interactive conversation rather than an engineered process.** The solution isn't better models, it's better methodology.
 
-The methodology presented here is derived from patterns observed in production teams, fragmented across blog posts, videos, and team discussions. No unified framework existed for systematically applying these principles. This is an attempt to build one, synthesizing scattered observations into a structured, repeatable workflow that:
+The methodology presented here is derived from patterns observed in production teams, fragmented across blog posts, videos, and team discussions. No unified framework existed for systematically applying these principles. This is an attempt to build one, synthesizing scattered observations and personal experimentation into a structured, repeatable workflow that:
 
 1. **Preserves the specification** instead of discarding it
 2. **Manages context intentionally** to prevent pollution
