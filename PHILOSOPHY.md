@@ -137,6 +137,8 @@ When code matches a well-designed spec with comprehensive tests, line-by-line re
 You review the architecture, the approach, the testing strategy. The implementation details become a compilation step.
 
 ## Real Numbers from Real Projects
+Startup leaders increasingly recognize that velocity is the number one competitive advantage. Internal engineering leverage is not an efficiency exercise. It is a revenue engine. The teams that can research, build, ship, and iterate faster are the ones that find product market fit sooner, compound customer insights faster, and outpace competitors in every direction. The company that moves fastest wins.
+
 These are not greenfield demos. They are outcomes observed in production environments across multiple sources. Yet only a small subset of teams are experimenting with workflows that optimize how engineers engineer in a way that scales organizational throughput in complex environments. The few who do have shared only fragments of their processes, experiments, and results, but those fragments consistently show that these principles work in practice. No complete, structured framework existed for applying them systematically. This methodology is an attempt to build that framework by synthesizing scattered observations, reconstructing missing steps, and systematizing the patterns into a repeatable workflow. It remains a work in progress, refined through continued application and experimentation.
 
 ### Complex Bug Fix in 300,000-Line Rust Codebase
