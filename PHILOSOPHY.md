@@ -138,7 +138,7 @@ You review the architecture, the approach, the testing strategy. The implementat
 
 ## Real Numbers from Real Projects
 
-These are not greenfield demos. They are outcomes observed in production environments at Boundary (AI infrastructure) and HumanLayer (human-in-the-loop AI workflows). Their engineering teams publicly shared fragments of their processes, experiments, and results, demonstrating that these principles work in practice. However, no complete, structured framework existed for applying them systematically. This methodology is an attempt to build that framework: synthesizing scattered observations, reconstructing missing steps, and systematizing patterns into a repeatable workflow.  It remains a work in progress, refined through continued application and experimentation.
+These are not greenfield demos. They are outcomes observed in production environments observed in multiple sources. Many engineering leaders or teams publicly shared fragments of their processes, experiments, and results, demonstrating that these principles work in practice. However, no complete, structured framework existed for applying them systematically. This methodology is an attempt to build that framework: synthesizing scattered observations, reconstructing missing steps, and systematizing patterns into a repeatable workflow.  It remains a work in progress, refined through continued application and experimentation.
 
 ### Complex Bug Fix in 300,000-Line Rust Codebase
 - **Challenge:** Critical bug in Boundary's BAML codebase (300,000+ lines of production Rust)
@@ -195,4 +195,4 @@ You're not reviewing less. You're reviewing earlier and smarter, where small err
 
 ---
 
-This methodology draws on patterns observed in production work at Boundary and HumanLayer, personal experimentation, and has been validated against 300K plus line codebases and real production systems.
+This methodology draws on patterns observed from multiple places, including production work at Boundary and HumanLayer, personal experimentation. It is a work in progress.
