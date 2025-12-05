@@ -196,4 +196,4 @@ You're not reviewing less. You're reviewing earlier and smarter, where small err
 
 ---
 
-This methodology draws on patterns observed from multiple places and from personal experimentation. It is a work in progress.
+This methodology draws on patterns observed from multiple places (but especially draws from the work of Dexter Horthy) and from personal experimentation. It is a work in progress.
