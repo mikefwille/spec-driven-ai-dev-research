@@ -1,3 +1,7 @@
+---
+description: Manage Linear tickets - create, update, comment, and follow workflow patterns
+---
+
 # Linear - Ticket Management
 
 You are tasked with managing Linear tickets, including creating tickets from thoughts documents, updating existing tickets, and following the team's specific workflow patterns.
@@ -60,10 +64,10 @@ When referencing thoughts documents, always provide GitHub links using the `link
 - **Status**: Always create new tickets in "Triage" status
 - **Project**: For new tickets, default to "M U L T I C L A U D E" (ID: f11c8d63-9120-4393-bfae-553da0b04fd8) unless told otherwise
 - **Priority**: Default to Medium (3) for most tasks, use best judgment or ask user
-  - Urgent (1): Critical blockers, security issues
-  - High (2): Important features with deadlines, major bugs
-  - Medium (3): Standard implementation tasks (default)
-  - Low (4): Nice-to-haves, minor improvements
+	- Urgent (1): Critical blockers, security issues
+	- High (2): Important features with deadlines, major bugs
+	- Medium (3): Standard implementation tasks (default)
+	- Low (4): Nice-to-haves, minor improvements
 - **Links**: Use the `links` parameter to attach URLs (not just markdown links in description)
 
 ### Automatic Label Assignment
@@ -81,28 +85,28 @@ Note: meta is mutually exclusive with hld/wui. Tickets can have both hld and wui
 #### Steps to follow after receiving the request:
 
 1. **Locate and read the thoughts document:**
-   - If given a path, read the document directly
-   - If given a topic/keyword, search thoughts/ directory using Grep to find relevant documents
-   - If multiple matches found, show list and ask user to select
-   - Create a TodoWrite list to track: Read document → Analyze content → Draft ticket → Get user input → Create ticket
+	 - If given a path, read the document directly
+	 - If given a topic/keyword, search thoughts/ directory using Grep to find relevant documents
+	 - If multiple matches found, show list and ask user to select
+	 - Create a TodoWrite list to track: Read document → Analyze content → Draft ticket → Get user input → Create ticket
 
 2. **Analyze the document content:**
-   - Identify the core problem or feature being discussed
-   - Extract key implementation details or technical decisions
-   - Note any specific code files or areas mentioned
-   - Look for action items or next steps
-   - Identify what stage the idea is at (early ideation vs ready to implement)
-   - Take time to ultrathink about distilling the essence of this document into a clear problem statement and solution approach
+	 - Identify the core problem or feature being discussed
+	 - Extract key implementation details or technical decisions
+	 - Note any specific code files or areas mentioned
+	 - Look for action items or next steps
+	 - Identify what stage the idea is at (early ideation vs ready to implement)
+	 - Take time to ultrathink about distilling the essence of this document into a clear problem statement and solution approach
 
 3. **Check for related context (if mentioned in doc):**
-   - If the document references specific code files, read relevant sections
-   - If it mentions other thoughts documents, quickly check them
-   - Look for any existing Linear tickets mentioned
+	 - If the document references specific code files, read relevant sections
+	 - If it mentions other thoughts documents, quickly check them
+	 - Look for any existing Linear tickets mentioned
 
 4. **Get Linear workspace context:**
-   - List teams: `mcp__linear__list_teams`
-   - If multiple teams, ask user to select one
-   - List projects for selected team: `mcp__linear__list_projects`
+	 - List teams: `mcp__linear__list_teams`
+	 - If multiple teams, ask user to select one
+	 - List projects for selected team: `mcp__linear__list_projects`
 
 5. **Draft the ticket summary:**
    Present a draft to the user:
@@ -133,12 +137,12 @@ Note: meta is mutually exclusive with hld/wui. Tickets can have both hld and wui
 
 6. **Interactive refinement:**
    Ask the user:
-   - Does this summary capture the ticket accurately?
-   - Which project should this go in? [show list]
-   - What priority? (Default: Medium/3)
-   - Any additional context to add?
-   - Should we include more/less implementation detail?
-   - Do you want to assign it to yourself?
+	 - Does this summary capture the ticket accurately?
+	 - Which project should this go in? [show list]
+	 - What priority? (Default: Medium/3)
+	 - Any additional context to add?
+	 - Should we include more/less implementation detail?
+	 - Do you want to assign it to yourself?
 
    Note: Ticket will be created in "Triage" status by default.
 
@@ -157,12 +161,12 @@ Note: meta is mutually exclusive with hld/wui. Tickets can have both hld and wui
    ```
 
 8. **Post-creation actions:**
-   - Show the created ticket URL
-   - Ask if user wants to:
-     - Add a comment with additional implementation details
-     - Create sub-tasks for specific action items
-     - Update the original thoughts document with the ticket reference
-   - If yes to updating thoughts doc:
+	 - Show the created ticket URL
+	 - Ask if user wants to:
+		 - Add a comment with additional implementation details
+		 - Create sub-tasks for specific action items
+		 - Update the original thoughts document with the ticket reference
+	 - If yes to updating thoughts doc:
      ```
      Add at the top of the document:
      ---
@@ -202,20 +206,20 @@ resuming sessions, with support for explicit overrides.
 When user wants to add a comment to a ticket:
 
 1. **Determine which ticket:**
-   - Use context from the current conversation to identify the relevant ticket
-   - If uncertain, use `mcp__linear__get_issue` to show ticket details and confirm with user
-   - Look for ticket references in recent work discussed
+	 - Use context from the current conversation to identify the relevant ticket
+	 - If uncertain, use `mcp__linear__get_issue` to show ticket details and confirm with user
+	 - Look for ticket references in recent work discussed
 
 2. **Format comments for clarity:**
-   - Attempt to keep comments concise (~10 lines) unless more detail is needed
-   - Focus on the key insight or most useful information for a human reader
-   - Not just what was done, but what matters about it
-   - Include relevant file references with backticks and GitHub links
+	 - Attempt to keep comments concise (~10 lines) unless more detail is needed
+	 - Focus on the key insight or most useful information for a human reader
+	 - Not just what was done, but what matters about it
+	 - Include relevant file references with backticks and GitHub links
 
 3. **File reference formatting:**
-   - Wrap paths in backticks: `thoughts/allison/example.md`
-   - Add GitHub link after: `([View](url))`
-   - Do this for both thoughts/ and code files mentioned
+	 - Wrap paths in backticks: `thoughts/allison/example.md`
+	 - Add GitHub link after: `([View](url))`
+	 - Do this for both thoughts/ and code files mentioned
 
 4. **Comment structure example:**
    ```markdown
@@ -230,9 +234,9 @@ When user wants to add a comment to a ticket:
    ```
 
 5. **Handle links properly:**
-   - If adding a link with a comment: Update the issue with the link AND mention it in the comment
-   - If only adding a link: Still create a comment noting what link was added for posterity
-   - Always add links to the issue itself using the `links` parameter
+	 - If adding a link with a comment: Update the issue with the link AND mention it in the comment
+	 - If only adding a link: Still create a comment noting what link was added for posterity
+	 - Always add links to the issue itself using the `links` parameter
 
 6. **For comments with links:**
    ```
@@ -265,10 +269,10 @@ When user wants to add a comment to a ticket:
 When user wants to find tickets:
 
 1. **Gather search criteria:**
-   - Query text
-   - Team/Project filters
-   - Status filters
-   - Date ranges (createdAt, updatedAt)
+	 - Query text
+	 - Team/Project filters
+	 - Status filters
+	 - Date ranges (createdAt, updatedAt)
 
 2. **Execute search:**
    ```
@@ -281,28 +285,28 @@ When user wants to find tickets:
    ```
 
 3. **Present results:**
-   - Show ticket ID, title, status, assignee
-   - Group by project if multiple projects
-   - Include direct links to Linear
+	 - Show ticket ID, title, status, assignee
+	 - Group by project if multiple projects
+	 - Include direct links to Linear
 
 ### 4. Updating Ticket Status
 
 When moving tickets through the workflow:
 
 1. **Get current status:**
-   - Fetch ticket details
-   - Show current status in workflow
+	 - Fetch ticket details
+	 - Show current status in workflow
 
 2. **Suggest next status:**
-   - Triage → Spec Needed (lacks detail/problem statement)
-   - Spec Needed → Research Needed (once problem/solution outlined)
-   - Research Needed → Research in Progress (starting research)
-   - Research in Progress → Research in Review (optional, can skip to Ready for Plan)
-   - Research in Review → Ready for Plan (research approved)
-   - Ready for Plan → Plan in Progress (starting to write plan)
-   - Plan in Progress → Plan in Review (plan written)
-   - Plan in Review → Ready for Dev (plan approved)
-   - Ready for Dev → In Dev (work started)
+	 - Triage → Spec Needed (lacks detail/problem statement)
+	 - Spec Needed → Research Needed (once problem/solution outlined)
+	 - Research Needed → Research in Progress (starting research)
+	 - Research in Progress → Research in Review (optional, can skip to Ready for Plan)
+	 - Research in Review → Ready for Plan (research approved)
+	 - Ready for Plan → Plan in Progress (starting to write plan)
+	 - Plan in Progress → Plan in Review (plan written)
+	 - Plan in Review → Ready for Dev (plan approved)
+	 - Ready for Dev → In Dev (work started)
 
 3. **Update with context:**
    ```

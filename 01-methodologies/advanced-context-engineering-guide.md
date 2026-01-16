@@ -93,11 +93,11 @@ This document outlines all the artifacts, practices, and tools needed to impleme
 
 **Structured Progress Files**
 - Comprehensive assessments including:
-  - Primary objectives and success criteria
-  - Information categorization and key elements
-  - File change tracking with specific paths and line numbers
-  - Action logs of important operations
-  - Technical details about relationships between components
+	- Primary objectives and success criteria
+	- Information categorization and key elements
+	- File change tracking with specific paths and line numbers
+	- Action logs of important operations
+	- Technical details about relationships between components
 - Clean context summaries for agent onboarding
 - Progress state preservation between sessions
 - Semantic structure preservation (keep user messages, compress assistant outputs)
@@ -757,55 +757,55 @@ HumanLayer has automated workflow commands that implement the full methodology:
 
 ### Phase 1: Foundation Setup (Week 1-2)
 - [ ] **Context Monitoring Infrastructure**
-  - [ ] Implement logarithmic sampling for token counting
-  - [ ] Create 40% utilization threshold alerts
-  - [ ] Build context compression utilities
-  - [ ] Set up entropy analysis tools
+	- [ ] Implement logarithmic sampling for token counting
+	- [ ] Create 40% utilization threshold alerts
+	- [ ] Build context compression utilities
+	- [ ] Set up entropy analysis tools
 
 - [ ] **Template Development**
-  - [ ] Create research document template
-  - [ ] Develop planning document template
-  - [ ] Build progress tracking template
-  - [ ] Design subagent delegation prompts
+	- [ ] Create research document template
+	- [ ] Develop planning document template
+	- [ ] Build progress tracking template
+	- [ ] Design subagent delegation prompts
 
 ### Phase 2: Workflow Integration (Week 3-4)
 - [ ] **Three-Phase Process Implementation**
-  - [ ] Deploy research → plan → implement workflow
-  - [ ] Integrate human review checkpoints
-  - [ ] Establish quality assurance protocols
-  - [ ] Create error recovery procedures
+	- [ ] Deploy research → plan → implement workflow
+	- [ ] Integrate human review checkpoints
+	- [ ] Establish quality assurance protocols
+	- [ ] Create error recovery procedures
 
 - [ ] **Human Layer Integration**
-  - [ ] Implement @hl.require_approval() decorators
-  - [ ] Set up Slack/email approval channels
-  - [ ] Configure timeout and escalation handling
-  - [ ] Establish audit trail systems
+	- [ ] Implement @hl.require_approval() decorators
+	- [ ] Set up Slack/email approval channels
+	- [ ] Configure timeout and escalation handling
+	- [ ] Establish audit trail systems
 
 ### Phase 3: Advanced Features (Week 5-6)
 - [ ] **Subagent Orchestration**
-  - [ ] Deploy orchestrator-worker patterns
-  - [ ] Implement dynamic context allocation
-  - [ ] Create results aggregation protocols
-  - [ ] Build overflow handling systems
+	- [ ] Deploy orchestrator-worker patterns
+	- [ ] Implement dynamic context allocation
+	- [ ] Create results aggregation protocols
+	- [ ] Build overflow handling systems
 
 - [ ] **Specification Management**
-  - [ ] Establish spec storage structure
-  - [ ] Implement code-to-spec mapping
-  - [ ] Create version control integration
-  - [ ] Build maintenance protocols
+	- [ ] Establish spec storage structure
+	- [ ] Implement code-to-spec mapping
+	- [ ] Create version control integration
+	- [ ] Build maintenance protocols
 
 ### Phase 4: Team Adoption (Week 7-8)
 - [ ] **Training & Documentation**
-  - [ ] Train team on methodology
-  - [ ] Create implementation playbooks
-  - [ ] Establish review workflows
-  - [ ] Document troubleshooting guides
+	- [ ] Train team on methodology
+	- [ ] Create implementation playbooks
+	- [ ] Establish review workflows
+	- [ ] Document troubleshooting guides
 
 - [ ] **Knowledge Systems**
-  - [ ] Deploy specification sharing systems
-  - [ ] Create decision capture templates
-  - [ ] Establish team knowledge transfer protocols
-  - [ ] Implement long-term maintenance procedures
+	- [ ] Deploy specification sharing systems
+	- [ ] Create decision capture templates
+	- [ ] Establish team knowledge transfer protocols
+	- [ ] Implement long-term maintenance procedures
 
 ## Success Metrics
 

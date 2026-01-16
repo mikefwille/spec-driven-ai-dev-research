@@ -1,3 +1,7 @@
+---
+description: Set up worktree for reviewing colleague's branch
+---
+
 # Local Review
 
 You are tasked with setting up a local review environment for a colleague's branch. This involves creating a worktree, setting up dependencies, and launching a new Claude Code session.
@@ -7,24 +11,24 @@ You are tasked with setting up a local review environment for a colleague's bran
 When invoked with a parameter like `gh_username:branchName`:
 
 1. **Parse the input**:
-   - Extract GitHub username and branch name from the format `username:branchname`
-   - If no parameter provided, ask for it in the format: `gh_username:branchName`
+	 - Extract GitHub username and branch name from the format `username:branchname`
+	 - If no parameter provided, ask for it in the format: `gh_username:branchName`
 
 2. **Extract ticket information**:
-   - Look for ticket numbers in the branch name (e.g., `eng-1696`, `ENG-1696`)
-   - Use this to create a short worktree directory name
-   - If no ticket found, use a sanitized version of the branch name
+	 - Look for ticket numbers in the branch name (e.g., `eng-1696`, `ENG-1696`)
+	 - Use this to create a short worktree directory name
+	 - If no ticket found, use a sanitized version of the branch name
 
 3. **Set up the remote and worktree**:
-   - Check if the remote already exists using `git remote -v`
-   - If not, add it: `git remote add USERNAME git@github.com:USERNAME/humanlayer`
-   - Fetch from the remote: `git fetch USERNAME`
-   - Create worktree: `git worktree add -b BRANCHNAME ~/wt/humanlayer/SHORT_NAME USERNAME/BRANCHNAME`
+	 - Check if the remote already exists using `git remote -v`
+	 - If not, add it: `git remote add USERNAME git@github.com:USERNAME/humanlayer`
+	 - Fetch from the remote: `git fetch USERNAME`
+	 - Create worktree: `git worktree add -b BRANCHNAME ~/wt/humanlayer/SHORT_NAME USERNAME/BRANCHNAME`
 
 4. **Configure the worktree**:
-   - Copy Claude settings: `cp .claude/settings.local.json WORKTREE/.claude/`
-   - Run setup: `make -C WORKTREE setup`
-   - Initialize thoughts: `cd WORKTREE && humanlayer thoughts init --directory humanlayer`
+	 - Copy Claude settings: `cp .claude/settings.local.json WORKTREE/.claude/`
+	 - Run setup: `make -C WORKTREE setup`
+	 - Initialize thoughts: `cd WORKTREE && humanlayer thoughts init --directory humanlayer`
 
 ## Error Handling
 

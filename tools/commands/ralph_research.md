@@ -1,3 +1,7 @@
+---
+description: Research highest priority Linear ticket needing investigation
+---
+
 ## PART I - IF A LINEAR TICKET IS MENTIONED
 
 0c. use `linear` cli to fetch the selected item into thoughts with the ticket number - ./thoughts/shared/tickets/ENG-xxxx.md
@@ -29,13 +33,13 @@ think deeply about the research needs
 2e. identify technical constraints and opportunities
 2f. Be unbiased - don't think too much about an ideal implementation plan, just document all related files and how the systems work today
 2g. document findings in a new thoughts document: `thoughts/shared/research/YYYY-MM-DD-ENG-XXXX-description.md`
-   - Format: `YYYY-MM-DD-ENG-XXXX-description.md` where:
-     - YYYY-MM-DD is today's date
-     - ENG-XXXX is the ticket number (omit if no ticket)
-     - description is a brief kebab-case description of the research topic
-   - Examples:
-     - With ticket: `2025-01-08-ENG-1478-parent-child-tracking.md`
-     - Without ticket: `2025-01-08-error-handling-patterns.md`
+	 - Format: `YYYY-MM-DD-ENG-XXXX-description.md` where:
+		 - YYYY-MM-DD is today's date
+		 - ENG-XXXX is the ticket number (omit if no ticket)
+		 - description is a brief kebab-case description of the research topic
+	 - Examples:
+		 - With ticket: `2025-01-08-ENG-1478-parent-child-tracking.md`
+		 - Without ticket: `2025-01-08-error-handling-patterns.md`
 
 think deeply about the findings
 

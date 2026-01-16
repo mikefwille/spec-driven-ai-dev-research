@@ -74,11 +74,11 @@ Sub-agents (referred to as "tasks" in Claude's toolset) are not for anthropomorp
   
 - **Typical Use Cases:** Primarily for read-only operations such as:
   
-    - Searching the codebase for specific files or functions.
+		- Searching the codebase for specific files or functions.
       
-    - Reading documentation.
+		- Reading documentation.
       
-    - Gathering information from the web.
+		- Gathering information from the web.
     
 - **Output:** The sub-agent performs its task (e.g., reading, searching) and returns a concise "assistant message" as a tool response to the parent agent (e.g., "that file is in source main whatever"). This keeps the parent agent's context lean.
   
@@ -120,13 +120,13 @@ This section details the step-by-step process used by the Boundary team.
    
 2. **Initial Research Prompt (with Sub-Agents):**
    
-    - The user initiates a new Claude session.
+		- The user initiates a new Claude session.
       
-    - A lengthy, pre-defined "research prompt" (e.g., 300 lines of Markdown, often stored in an open-source `commands` directory) is used.
+		- A lengthy, pre-defined "research prompt" (e.g., 300 lines of Markdown, often stored in an open-source `commands` directory) is used.
       
-    - This prompt instructs Claude to use sub-agents to search the codebase.
+		- This prompt instructs Claude to use sub-agents to search the codebase.
       
-    - **Example Prompt Structure (conceptual):**
+		- **Example Prompt Structure (conceptual):**
       
         Markdown
         
@@ -155,19 +155,19 @@ This section details the step-by-step process used by the Boundary team.
         - Potential areas for modification or validation.
         ```
         
-    - The user then pastes the specific issue description (e.g., "Find everywhere in .baml relevant to solving this issue and figure out how the information flows").
+		- The user then pastes the specific issue description (e.g., "Find everywhere in .baml relevant to solving this issue and figure out how the information flows").
     
 3. **Agent Execution and Steering:**
    
-    - Claude launches multiple sub-agents in parallel to perform searches (e.g., `gp_search`, `read_glob`).
+		- Claude launches multiple sub-agents in parallel to perform searches (e.g., `gp_search`, `read_glob`).
       
-    - **User Intervention (Steering):** If the initial research yields incorrect results (e.g., "no bug found"), the user must intervene. This involves:
+		- **User Intervention (Steering):** If the initial research yields incorrect results (e.g., "no bug found"), the user must intervene. This involves:
       
-        - **Reviewing the research output:** Critical human step to identify inaccuracies.
+				- **Reviewing the research output:** Critical human step to identify inaccuracies.
           
-        - **Refining the Prompt:** Updating the initial research prompt with more specific details, failing test cases, or explicit constraints (e.g., "only use read glob gp search never bash").
+				- **Refining the Prompt:** Updating the initial research prompt with more specific details, failing test cases, or explicit constraints (e.g., "only use read glob gp search never bash").
           
-        - **Manual Compaction/Restart:** If the context is too polluted from incorrect research, the user might manually create a new research prompt based on the _learnings_ from the failed attempt, then start a _new agent session_ using `/clear` and the refined prompt. This is a form of manual compaction, leveraging past learnings without carrying unnecessary context.
+				- **Manual Compaction/Restart:** If the context is too polluted from incorrect research, the user might manually create a new research prompt based on the _learnings_ from the failed attempt, then start a _new agent session_ using `/clear` and the refined prompt. This is a form of manual compaction, leveraging past learnings without carrying unnecessary context.
     
 4. **Research Output Generation:** The agent consolidates its findings into a detailed Markdown file (e.g., `research_report.md`). This file should explicitly list files, line numbers, and an explanation of the system's behavior relevant to the issue.
    
@@ -186,29 +186,29 @@ This section details the step-by-step process used by the Boundary team.
 
 1. **Initiate Planning Session:**
    
-    - Start a _new_ Claude session (`/clear`) to ensure a clean context window.
+		- Start a _new_ Claude session (`/clear`) to ensure a clean context window.
       
-    - Provide the agent with the **research report** generated in Phase 1. This acts as the initial context.
+		- Provide the agent with the **research report** generated in Phase 1. This acts as the initial context.
       
-    - Use a specific "plan command" or a detailed prompt to instruct Claude to create an implementation plan.
+		- Use a specific "plan command" or a detailed prompt to instruct Claude to create an implementation plan.
     
 2. **Plan Generation Prompt:**
    
-    - The prompt instructs Claude to analyze the research report and propose a phased approach to solving the problem.
+		- The prompt instructs Claude to analyze the research report and propose a phased approach to solving the problem.
       
-    - It should include directives for:
+		- It should include directives for:
       
-        - **Identifying Phases:** Breaking the work into logical, sequential steps.
+				- **Identifying Phases:** Breaking the work into logical, sequential steps.
           
-        - **Defining Scope ("What not to do"):** Explicitly stating what functionalities or changes are _out of scope_ to prevent feature creep.
+				- **Defining Scope ("What not to do"):** Explicitly stating what functionalities or changes are _out of scope_ to prevent feature creep.
           
-        - **Error Messages:** Specifying the desired quality and content of any new error messages.
+				- **Error Messages:** Specifying the desired quality and content of any new error messages.
           
-        - **Test-Driven Development (TDD):** Crucially, the prompt dictates that phases should _always_ begin with writing a _failing test_ that demonstrates the bug, followed by the code fix. This provides immediate, automated feedback for the agent.
+				- **Test-Driven Development (TDD):** Crucially, the prompt dictates that phases should _always_ begin with writing a _failing test_ that demonstrates the bug, followed by the code fix. This provides immediate, automated feedback for the agent.
           
-        - **Automated Verification Steps:** For each phase, include shell commands or instructions for the agent to verify its work (e.g., `cargo test`, `npm run lint`).
+				- **Automated Verification Steps:** For each phase, include shell commands or instructions for the agent to verify its work (e.g., `cargo test`, `npm run lint`).
         
-    - **Example Prompt Structure (conceptual):**
+		- **Example Prompt Structure (conceptual):**
       
         Markdown
 
@@ -239,17 +239,17 @@ This section details the step-by-step process used by the Boundary team.
    
 5. **Human Review of Plan:** This is another crucial checkpoint. The human reviewer verifies:
    
-    - **Correctness:** Does the plan address the bug accurately based on the research?
+		- **Correctness:** Does the plan address the bug accurately based on the research?
       
-    - **Completeness:** Are all necessary steps included?
+		- **Completeness:** Are all necessary steps included?
       
-    - **Test Strategy:** Are the proposed tests robust and effective?
+		- **Test Strategy:** Are the proposed tests robust and effective?
       
-    - **Error Messages:** Are the error messages clear and helpful?
+		- **Error Messages:** Are the error messages clear and helpful?
       
-    - **Architecture:** Does the plan align with the codebase's architectural principles?
+		- **Architecture:** Does the plan align with the codebase's architectural principles?
       
-    - The linear board tracks "plan in progress," "plan in review," and "ready for dev".
+		- The linear board tracks "plan in progress," "plan in review," and "ready for dev".
       
 
 **Outcome:** A detailed, human-reviewed, phased implementation plan, stored in a Markdown file, ready for the coding agent.
@@ -264,43 +264,43 @@ This section details the step-by-step process used by the Boundary team.
 
 1. **Initiate Implementation Session:**
    
-    - Start a _new_ Claude session (`/clear`).
+		- Start a _new_ Claude session (`/clear`).
       
-    - Provide the agent with the **approved implementation plan** from Phase 2. This serves as its primary instruction set.
+		- Provide the agent with the **approved implementation plan** from Phase 2. This serves as its primary instruction set.
       
-    - Instruct the agent to "implement this plan."
+		- Instruct the agent to "implement this plan."
     
 2. **Test-Driven Execution:** The agent strictly follows the TDD approach outlined in the plan.
    
-    - **Write Failing Test:** For each phase, the agent first writes the specified failing test case.
+		- **Write Failing Test:** For each phase, the agent first writes the specified failing test case.
       
-    - **Run Test:** The agent executes the test command (e.g., `cargo test`). It receives feedback (test failure).
+		- **Run Test:** The agent executes the test command (e.g., `cargo test`). It receives feedback (test failure).
       
-    - **Fix Code:** Based on the test failure and the plan, the agent modifies the codebase to fix the bug or implement the feature.
+		- **Fix Code:** Based on the test failure and the plan, the agent modifies the codebase to fix the bug or implement the feature.
       
-    - **Run Automated Verification:** The agent runs the automated verification steps (including tests, linters, type checkers) specified in the plan.
+		- **Run Automated Verification:** The agent runs the automated verification steps (including tests, linters, type checkers) specified in the plan.
       
-    - **Iterate:** This cycle (write failing test, run test, fix code, verify) continues until all tests pass and verification steps are complete.
+		- **Iterate:** This cycle (write failing test, run test, fix code, verify) continues until all tests pass and verification steps are complete.
     
 3. **Leveraging IDE Integration (for Agent Self-Correction):**
    
-    - If using the Claude Code VS Code extension in an integrated terminal, the agent can access LSP errors. This provides crucial feedback on linting, typing, and other code quality issues in real-time.
+		- If using the Claude Code VS Code extension in an integrated terminal, the agent can access LSP errors. This provides crucial feedback on linting, typing, and other code quality issues in real-time.
       
-    - The agent might be prompted to "get LSP errors" if it encounters issues that built-in tests don't catch.
+		- The agent might be prompted to "get LSP errors" if it encounters issues that built-in tests don't catch.
     
 4. **Pull Request (PR) Creation:** Upon successful completion of the plan (all tests pass, all verification steps are green), the agent generates a Pull Request (PR) with the implemented changes.
    
 5. **Human Code Review (Tests Focused):**
    
-    - The focus of the human code review shifts dramatically. Instead of line-by-line code review, the primary focus is on the **quality and design of the tests**.
+		- The focus of the human code review shifts dramatically. Instead of line-by-line code review, the primary focus is on the **quality and design of the tests**.
       
-    - Reviewers check if the tests accurately cover the intended functionality and prevent regressions.
+		- Reviewers check if the tests accurately cover the intended functionality and prevent regressions.
       
-    - If the tests are robust, confidence in the agent-generated code is high, leading to quicker approvals and merges.
+		- If the tests are robust, confidence in the agent-generated code is high, leading to quicker approvals and merges.
       
-    - Example from video: A PR with research-backed planning resulted in a well-designed test and an accurate fix, leading to automatic merging. A PR without research-backed planning might have an incorrect test design, requiring human rejection and re-direction.
+		- Example from video: A PR with research-backed planning resulted in a well-designed test and an accurate fix, leading to automatic merging. A PR without research-backed planning might have an incorrect test design, requiring human rejection and re-direction.
       
-    - Critical areas (e.g., core libraries, algorithmic complexity, low test coverage areas) may still require deeper human review.
+		- Critical areas (e.g., core libraries, algorithmic complexity, low test coverage areas) may still require deeper human review.
       
 
 **Outcome:** A successfully implemented feature or bug fix, validated by automated tests, and merged into the codebase after human review of the tests and plan.

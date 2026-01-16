@@ -55,43 +55,43 @@ summary_short: >-
 This methodology follows a simple three-phase approach:
 
 1. **Research Phase** (`/research_codebase`)
-   - Understand what exists and how it works
-   - Spawn parallel sub-agents to explore different areas
-   - Document findings with file:line references
-   - **Output**: Research document in `thoughts/shared/research/`
-   - **Human Action**: Review and approve understanding
+	 - Understand what exists and how it works
+	 - Spawn parallel sub-agents to explore different areas
+	 - Document findings with file:line references
+	 - **Output**: Research document in `thoughts/shared/research/`
+	 - **Human Action**: Review and approve understanding
 
 2. **Planning Phase** (`/create_plan`)
-   - Design implementation with specific phases
-   - Define automated and manual success criteria
-   - Break work into incremental, testable changes
-   - **Output**: Implementation plan in `thoughts/shared/plans/`
-   - **Human Action**: Review and approve approach
+	 - Design implementation with specific phases
+	 - Define automated and manual success criteria
+	 - Break work into incremental, testable changes
+	 - **Output**: Implementation plan in `thoughts/shared/plans/`
+	 - **Human Action**: Review and approve approach
 
 3. **Implementation Phase** (`/implement_plan [path-to-plan]`)
-   - Execute the approved plan phase by phase
-   - Check off items as they're completed
-   - Run success criteria after each phase
-   - **Output**: Working code + updated plan with checkmarks
-   - **Human Action**: Review at phase boundaries
+	 - Execute the approved plan phase by phase
+	 - Check off items as they're completed
+	 - Run success criteria after each phase
+	 - **Output**: Working code + updated plan with checkmarks
+	 - **Human Action**: Review at phase boundaries
 
 4. **Validation Phase** (`/validate_plan`) *(optional but recommended)*
-   - Verify implementation matches plan's success criteria
-   - Run all automated checks and document manual testing
-   - **Output**: Validation report confirming completion
-   - **Human Action**: Review validation results
+	 - Verify implementation matches plan's success criteria
+	 - Run all automated checks and document manual testing
+	 - **Output**: Validation report confirming completion
+	 - **Human Action**: Review validation results
 
 5. **Handoff Phase** (`/create_handoff` / `/resume_handoff`) *(when needed)*
-   - **Create**: Document current state when switching contexts
-   - **Resume**: Pick up work from a previous handoff
-   - **Output**: Handoff document for seamless context recovery
-   - **Human Action**: Use when pausing, transitioning, or resuming work
+	 - **Create**: Document current state when switching contexts
+	 - **Resume**: Pick up work from a previous handoff
+	 - **Output**: Handoff document for seamless context recovery
+	 - **Human Action**: Use when pausing, transitioning, or resuming work
 
 6. **Commit & PR Phase** (`/commit` and `/describe_pr`)
-   - Create structured git commits with context
-   - Generate comprehensive PR descriptions
-   - **Output**: Clean git history + detailed PR documentation
-   - **Human Action**: Review commits and PR before pushing
+	 - Create structured git commits with context
+	 - Generate comprehensive PR descriptions
+	 - **Output**: Clean git history + detailed PR documentation
+	 - **Human Action**: Review commits and PR before pushing
 
 **Key Principle**: Research → Plan → Implement → Validate → Document → Ship. Each phase produces a document that becomes the input for the next phase.
 
@@ -136,20 +136,20 @@ and includes human escalation workflows?"
 **Agents Spawned**:
 
 1. **web-search-researcher**: External API research
-   - Salesforce API capabilities and authentication
-   - Zendesk integration options
-   - AI customer support best practices
-   - Human-in-the-loop patterns for support
+	 - Salesforce API capabilities and authentication
+	 - Zendesk integration options
+	 - AI customer support best practices
+	 - Human-in-the-loop patterns for support
 
 2. **codebase-pattern-finder**: Similar implementations
-   - Look for existing customer support integrations in codebase
-   - Find authentication patterns for third-party APIs
-   - Identify communication channel handling patterns
+	 - Look for existing customer support integrations in codebase
+	 - Find authentication patterns for third-party APIs
+	 - Identify communication channel handling patterns
 
 3. **thoughts-locator**: Historical context
-   - Previous customer support projects
-   - Integration patterns and decisions
-   - Architectural choices made by the team
+	 - Previous customer support projects
+	 - Integration patterns and decisions
+	 - Architectural choices made by the team
 
 ### Step 1.3: Research Synthesis & Documentation
 **Output**: `thoughts/shared/research/2025-09-18-ENG-2401-ai-customer-support-research.md`
@@ -227,14 +227,14 @@ for customer context, (3) LLM-powered response generation, (4) Human escalation 
 **Agents Spawned**:
 
 1. **codebase-analyzer**: Deep dive into existing patterns
-   - Analyze current authentication implementation
-   - Review existing API integration patterns
-   - Study current error handling and monitoring setup
+	 - Analyze current authentication implementation
+	 - Review existing API integration patterns
+	 - Study current error handling and monitoring setup
 
 2. **thoughts-analyzer**: Historical decision analysis
-   - Extract lessons learned from similar projects
-   - Identify architectural decisions to maintain consistency
-   - Review past integration challenges and solutions
+	 - Extract lessons learned from similar projects
+	 - Identify architectural decisions to maintain consistency
+	 - Review past integration challenges and solutions
 
 ### Step 2.3: Plan Creation & Human Review
 **Output**: `thoughts/shared/plans/2025-09-18-ENG-2401-ai-customer-support-implementation.md`
@@ -622,19 +622,19 @@ This workflow can be replicated for any complex AI project:
 
 ### Phase Templates
 1. **Research Phase** (10-15% of project time)
-   - Spawn parallel sub-agents for comprehensive investigation
-   - Create structured research document with file:line references
-   - Human review focused on architectural understanding
+	 - Spawn parallel sub-agents for comprehensive investigation
+	 - Create structured research document with file:line references
+	 - Human review focused on architectural understanding
 
 2. **Planning Phase** (15-20% of project time)
-   - Break implementation into weekly phases
-   - Define automated and manual success criteria
-   - Human review focused on implementation approach
+	 - Break implementation into weekly phases
+	 - Define automated and manual success criteria
+	 - Human review focused on implementation approach
 
 3. **Implementation Phase** (65-75% of project time)
-   - Follow plan with real-time progress tracking
-   - Context refresh at 40% utilization
-   - Continuous specification updates
+	 - Follow plan with real-time progress tracking
+	 - Context refresh at 40% utilization
+	 - Continuous specification updates
 
 ### Success Indicators
 - Context utilization stays under 40%
