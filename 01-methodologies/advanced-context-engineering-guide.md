@@ -86,6 +86,7 @@ This document outlines all the artifacts, practices, and tools needed to impleme
 - Use intentional compaction instead of naive interaction
 - Implement human review at research and planning phases
 - Leverage hierarchy of error prevention (research > planning > implementation)
+- Define success criteria and test design during planning, implement tests before code
 
 ## Required Artifacts & Tools
 
@@ -140,17 +141,20 @@ This document outlines all the artifacts, practices, and tools needed to impleme
 ```markdown
 # Implementation Plan: [Task Name]
 
+## Desired End State
+[Specification of the desired end state after this plan is complete]
+
 ## Step-by-Step Implementation
 ### Step 1: [Description]
 - **File:** `path/to/file.ext`
 - **Changes:** [Specific code snippets or modifications]
-- **Testing:** [How to verify this step]
+- **Tests to Write:** [Specific tests that define correct behavior for this step - written before implementation code]
 - **Success Criteria:** [What indicates completion]
 
 ### Step 2: [Description]
 - **File:** `path/to/file.ext`
 - **Changes:** [Specific code snippets or modifications]
-- **Testing:** [How to verify this step]
+- **Tests to Write:** [Specific tests that define correct behavior for this step - written before implementation code]
 - **Success Criteria:** [What indicates completion]
 
 ## Overall Verification Strategy
@@ -158,6 +162,8 @@ This document outlines all the artifacts, practices, and tools needed to impleme
 - [Integration testing requirements]
 - [Performance validation]
 ```
+
+**Note on test design in planning:** Success criteria and test specifications cannot be defined well until after Research, because Research is what reveals the architecture, integration points, and edge cases that tests need to cover. The Plan is where test design belongs - it's informed by the system understanding from Research and specific enough to drive implementation.
 
 **Phase 3: Implementation Tracking**
 ```markdown
@@ -183,6 +189,28 @@ This document outlines all the artifacts, practices, and tools needed to impleme
 - Test coverage: [Status]
 - Documentation: [Status]
 ```
+
+### The Role of Testing in This Methodology
+
+Testing in this methodology serves a fundamentally different purpose than in traditional development. Instead of catching bugs after code is written, tests are the mechanism that replaces line-by-line code review.
+
+**Why this works:** If the research accurately reflects how the system works, and the plan is architecturally sound, and the tests verify the right behaviors - then the implementation is trustworthy without reading every line. The specification (research + plan) IS your understanding. The tests ARE your verification. Line-by-line code review becomes unnecessary ceremony.
+
+**When test design happens:** Test specifications are defined during the Planning phase, not before Research and not during Implementation. Research has to happen first - it reveals the architecture, integration points, edge cases, and existing patterns that tests need to cover. Only after understanding the system can you design meaningful tests.
+
+**How tests are implemented:** During the Implementation phase, tests are written first for each step, before the implementation code. This follows TDD principles:
+
+1. Write a failing test that defines the correct behavior (from the plan's test specifications)
+2. Write the implementation code to make the test pass
+3. Run all tests to verify no regressions
+4. Move to the next step
+
+**Two categories of verification** should be defined in every plan:
+
+- **Automated verification** - Commands that can be run by the agent: test suites, linters, type checkers, build commands. These provide immediate feedback.
+- **Manual verification** - Steps requiring human testing: UI behavior, performance under real conditions, edge cases that are hard to automate. The agent pauses and waits for human confirmation before proceeding.
+
+**The hierarchy of leverage applies to tests too.** A well-designed test suite based on solid research and a sound plan catches errors at the right level. A poorly designed test suite (testing the wrong things, missing edge cases) provides false confidence. Test design deserves the same careful attention as research and planning.
 
 ### 3. Sub-Agent Management Framework
 
@@ -610,8 +638,11 @@ HumanLayer has implemented a production-grade system that directly implements th
 **Implementation Philosophy**:
 ```markdown
 Plans are carefully designed, but reality can be messy. Your job is to:
+- For each phase, write the tests first (from the plan's test specifications), then the implementation code
 - Follow the plan's intent while adapting to what you find
 - Implement each phase fully before moving to the next
+- Run automated verification after each phase before proceeding
+- Pause for manual verification when the plan requires it
 - Verify your work makes sense in the broader codebase context
 - Update checkboxes in the plan as you complete sections
 ```
@@ -876,6 +907,7 @@ This methodology transforms:
 - **From:** Single-agent bottlenecks → **To:** Orchestrated multi-agent systems
 - **From:** Token waste → **To:** Intelligent compression and allocation
 - **From:** "Vibe coding" → **To:** Engineered, verifiable development
+- **From:** Tests verify after the fact → **To:** Tests define correct behavior before implementation
 
 ## Advanced Techniques & Expert Insights
 

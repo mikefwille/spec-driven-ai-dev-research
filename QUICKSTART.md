@@ -7,11 +7,11 @@
 ## The 3-Phase Flow
 
 ```
-┌─────────────┐     ┌─────────────┐     ┌─────────────┐
-│  RESEARCH   │ --> │    PLAN     │ --> │  IMPLEMENT  │
-└─────────────┘     └─────────────┘     └─────────────┘
-      ↓                    ↓                    ↓
-  🔍 REVIEW          🔍 REVIEW            ✅ TEST
+┌─────────────┐     ┌─────────────┐     ┌──────────────────┐
+│  RESEARCH   │ --> │    PLAN     │ --> │    IMPLEMENT     │
+└─────────────┘     └─────────────┘     │  (tests first,   │
+      ↓                    ↓            │   then code)     │
+  🔍 REVIEW          🔍 REVIEW         └──────────────────┘
 ```
 
 ---
@@ -55,16 +55,16 @@ START HERE
 ┌─────────────────────────────────┐
 │  /implement_plan [plan-path]    │
 │  (executes phase by phase)      │
+│                                 │
+│  Per phase:                     │
+│  1. Write tests first           │
+│  2. Write implementation code   │
+│  3. Run automated verification  │
+│  4. Manual testing if needed    │
+│  • Use /debug if issues arise   │
 └─────────────────────────────────┘
     ↓
     ↓ Updates plan with ✓ checkboxes
-    ↓
-┌─────────────────────────────────┐
-│  ✅ Test each phase             │
-│  • Run automated checks         │
-│  • Do manual testing            │
-│  • Use /debug if issues arise   │
-└─────────────────────────────────┘
     ↓
     ↓ All phases complete?
     ↓
@@ -166,11 +166,11 @@ Or with the research doc:
 Open the plan document and check:
 - [ ] Implementation steps are clear and specific
 - [ ] Each phase has automated + manual success criteria
+- [ ] Each step has test specifications (what tests to write and what they verify)
 - [ ] No more than 5 files changed per step
-- [ ] Testing strategy defined
 - [ ] **No open questions remain**
 
-**Why this matters:** Bad plan → hundreds of wrong code lines
+**Why this matters:** Bad plan → hundreds of wrong code lines. Bad test design → false confidence in broken code.
 
 ### ❌ If Plan Isn't Complete
 
@@ -200,6 +200,7 @@ Agent: [adds specific test cases to success criteria]
 **The plan is ready when:**
 - Every step is concrete enough to implement
 - Success criteria are testable (not vague)
+- Test specifications are defined for each step (what tests to write, what behavior they verify)
 - You could hand it to another dev and they'd know what to do
 - **All open questions are resolved**
 
@@ -219,17 +220,20 @@ Once plan is bulletproof → Move to Phase 3
 
 ### What Happens
 - Agent reads the plan
-- Implements phase by phase
+- For each phase: writes the tests first (from the plan's test specs), then the implementation code
+- Runs automated verification after each phase
 - Checks off items in the plan as they're completed
-- Runs success criteria after each phase
+- Pauses for manual verification when the plan requires it
 - Updates the plan document with progress
 
 **You can watch progress** - open the plan file and see checkboxes getting marked
 
 ### ✅ Testing During Implementation
-After each phase completes:
-- [ ] Run automated checks (should be in plan's success criteria)
-- [ ] Do manual testing (also in plan's success criteria)
+For each phase:
+1. Agent writes tests first (defined in the plan's test specifications)
+2. Agent writes implementation code to make tests pass
+3. Agent runs automated verification (test suites, linters, type checks)
+4. You do manual testing if the plan's success criteria require it
 
 ### 🐛 Hit a Bug?
 ```bash
@@ -297,8 +301,9 @@ Look in `thoughts/shared/plans/` for your most recent plan file, check its progr
 
 1. **Never skip checkpoints** - They catch errors before they cascade
 2. **The spec is the asset** - Plans live in `thoughts/`, code is generated from them
-3. **40% context rule** - Agent stays under 40% context usage through sub-agents
-4. **Human reviews specs, agent writes code** - Reverse the traditional model
+3. **Tests define done** - Test specs are designed in the plan, written before implementation code
+4. **40% context rule** - Agent stays under 40% context usage through sub-agents
+5. **Human reviews specs, agent writes code** - Reverse the traditional model
 
 ---
 
