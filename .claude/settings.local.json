@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/mikew/Dropbox/vault/life/inbox/youtube/**)",
+      "Read(//Users/mikew/Dropbox/vault/**)",
+      "Bash(cat:*)",
+      "Bash(python3:*)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Read(//Users/mikew/.claude/projects/-Users-mikew-vault-life--projects-ai-dev/**)",
+      "Bash(open:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
